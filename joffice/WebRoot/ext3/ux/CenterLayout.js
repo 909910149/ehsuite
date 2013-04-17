@@ -1,0 +1,1 @@
+Ext.ns("Ext.ux.layout");Ext.ux.layout.CenterLayout=Ext.extend(Ext.layout.FitLayout,{setItemSize:function(c,d){this.container.addClass("ux-layout-center");c.addClass("ux-layout-center-item");if(c&&d.height>0){if(c.width){d.width=c.width;}c.setSize(d);}}});Ext.Container.LAYOUTS["ux.center"]=Ext.ux.layout.CenterLayout;

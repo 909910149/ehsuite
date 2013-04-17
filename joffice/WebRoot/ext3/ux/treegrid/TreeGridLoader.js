@@ -1,0 +1,1 @@
+Ext.ux.tree.TreeGridLoader=Ext.extend(Ext.tree.TreeLoader,{createNode:function(b){if(!b.uiProvider){b.uiProvider=Ext.ux.tree.TreeGridNodeUI;}return Ext.tree.TreeLoader.prototype.createNode.call(this,b);}});

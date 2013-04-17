@@ -1,0 +1,1 @@
+var FCKPlugins=FCK.Plugins=new Object();FCKPlugins.ItemsCount=0;FCKPlugins.Items=new Object();FCKPlugins.Load=function(){var h=FCKPlugins.Items;for(var g=0;g<FCKConfig.Plugins.Items.length;g++){var i=FCKConfig.Plugins.Items[g];var j=h[i[0]]=new FCKPlugin(i[0],i[1],i[2]);FCKPlugins.ItemsCount++;}for(var f in h){h[f].Load();}FCKPlugins.Load=null;};

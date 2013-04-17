@@ -1,0 +1,1 @@
+var FCKSelection=FCK.Selection={GetParentBlock:function(){var b=this.GetParentElement();while(b){if(FCKListsLib.BlockBoundaries[b.nodeName.toLowerCase()]){break;}b=b.parentNode;}return b;},ApplyStyle:function(b){FCKStyles.ApplyStyle(new FCKStyle(b));}};

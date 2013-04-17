@@ -1,0 +1,1 @@
+Ext.ux.Exporter.ExcelFormatter=Ext.extend(Ext.ux.Exporter.Formatter,{format:function(d,f){var e=new Ext.ux.Exporter.ExcelFormatter.Workbook(f);e.addWorksheet(d,f||{});return e.render();}});

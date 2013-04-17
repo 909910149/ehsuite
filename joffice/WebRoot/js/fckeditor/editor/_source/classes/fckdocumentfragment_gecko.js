@@ -1,0 +1,1 @@
+var FCKDocumentFragment=function(c,d){this.RootNode=d||c.createDocumentFragment();};FCKDocumentFragment.prototype={AppendTo:function(b){b.appendChild(this.RootNode);},AppendHtml:function(d){var c=this.RootNode.ownerDocument.createElement("div");c.innerHTML=d;FCKDomTools.MoveChildren(c,this.RootNode);},InsertAfterNode:function(b){FCKDomTools.InsertAfterNode(b,this.RootNode);}};

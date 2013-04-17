@@ -1,0 +1,1 @@
+Ext.ns("FileAttachDetail");FileAttachDetail.show=function(d){var c=new Ext.Window({title:"附件详细信息",iconCls:"menu-attachment",width:480,height:253,minHeight:253,modal:true,layout:"form",buttonAlign:"center",autoLoad:{url:__ctxPath+"/fileDetail.do?fileId="+d},buttons:[{xtype:"button",iconCls:"btn-close",text:"关闭",handler:function(){c.close();}}]});c.show();};
