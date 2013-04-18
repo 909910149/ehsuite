@@ -5,7 +5,7 @@
    public static final Short FLAG_DISABLE = Short.valueOf((short) 0);
  
    public static final Short FLAG_ACTIVATION = Short.valueOf((short) 1);
- 
+   //git test
    public static final Short FLAG_DELETED = Short.valueOf((short) 1);
  
    public static final Short FLAG_UNDELETED = Short.valueOf((short) 0);
