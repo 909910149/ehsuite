@@ -1,24 +1,42 @@
 /*     */ package com.htsoft.oa.action.system;
 /*     */ 
-/*     */ import com.google.gson.Gson;
-/*     */ import com.google.gson.reflect.TypeToken;
-/*     */ import com.htsoft.core.command.QueryFilter;
-/*     */ import com.htsoft.core.util.BeanUtil;
-/*     */ import com.htsoft.core.util.ContextUtil;
-/*     */ import com.htsoft.core.web.action.BaseAction;
-/*     */ import com.htsoft.core.web.paging.PagingBean;
-/*     */ import com.htsoft.oa.model.system.AppUser;
-/*     */ import com.htsoft.oa.model.system.GlobalType;
-/*     */ import com.htsoft.oa.service.system.GlobalTypeService;
-/*     */ import java.io.PrintStream;
 /*     */ import java.lang.reflect.Type;
-/*     */ import java.util.HashSet;
-/*     */ import java.util.List;
-/*     */ import java.util.Set;
-/*     */ import javax.annotation.Resource;
-/*     */ import javax.servlet.http.HttpServletRequest;
-/*     */ import org.apache.commons.lang.StringUtils;
-/*     */ import org.apache.commons.logging.Log;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.annotation.Resource;
+
+import org.apache.commons.lang.StringUtils;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.htsoft.core.command.QueryFilter;
+import com.htsoft.core.model.OnlineUser;
+import com.htsoft.core.util.BeanUtil;
+import com.htsoft.core.util.ContextUtil;
+import com.htsoft.core.web.action.BaseAction;
+import com.htsoft.oa.model.system.AppUser;
+import com.htsoft.oa.model.system.GlobalType;
+import com.htsoft.oa.service.system.GlobalTypeService;
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
 /*     */ 
 /*     */ public class GlobalTypeAction extends BaseAction
 /*     */ {
@@ -62,7 +80,7 @@
 /*     */     }
 /*  72 */     List typeList = this.globalTypeService.getByParentIdCatKey(parentId, this.catKey);
 /*     */ 
-/*  74 */     Type type = new TypeToken() {  }
+/*  74 */     Type type = new TypeToken<List<OnlineUser>>() {  }
 /*  74 */     .getType();
 /*  75 */     StringBuffer buff = new StringBuffer("{success:true,result:");
 /*     */ 

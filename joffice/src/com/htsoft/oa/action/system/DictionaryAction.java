@@ -1,23 +1,42 @@
 /*     */ package com.htsoft.oa.action.system;
 /*     */ 
-/*     */ import com.google.gson.Gson;
-/*     */ import com.google.gson.GsonBuilder;
-/*     */ import com.google.gson.reflect.TypeToken;
-/*     */ import com.htsoft.core.command.QueryFilter;
-/*     */ import com.htsoft.core.util.BeanUtil;
-/*     */ import com.htsoft.core.web.action.BaseAction;
-/*     */ import com.htsoft.core.web.paging.PagingBean;
-/*     */ import com.htsoft.oa.model.system.Dictionary;
-/*     */ import com.htsoft.oa.model.system.GlobalType;
-/*     */ import com.htsoft.oa.service.system.DictionaryService;
-/*     */ import com.htsoft.oa.service.system.GlobalTypeService;
-/*     */ import flexjson.JSONSerializer;
 /*     */ import java.lang.reflect.Type;
-/*     */ import java.util.List;
-/*     */ import javax.annotation.Resource;
-/*     */ import javax.servlet.http.HttpServletRequest;
-/*     */ import org.apache.commons.lang.StringUtils;
-/*     */ import org.apache.commons.logging.Log;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.apache.commons.lang.StringUtils;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import com.htsoft.core.command.QueryFilter;
+import com.htsoft.core.model.OnlineUser;
+import com.htsoft.core.util.BeanUtil;
+import com.htsoft.core.web.action.BaseAction;
+import com.htsoft.oa.model.system.Dictionary;
+import com.htsoft.oa.model.system.GlobalType;
+import com.htsoft.oa.service.system.DictionaryService;
+import com.htsoft.oa.service.system.GlobalTypeService;
+
+import flexjson.JSONSerializer;
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
 /*     */ 
 /*     */ public class DictionaryAction extends BaseAction
 /*     */ {
@@ -89,7 +108,7 @@
 /*  98 */       filter.addFilter("Q_globalType.path_S_LFK", globalType.getPath());
 /*     */     }
 /* 100 */     List list = this.dictionaryService.getAll(filter);
-/* 101 */     Type type = new TypeToken() {
+/* 101 */     Type type = new TypeToken<List<OnlineUser>>() {
 /* 102 */     }.getType();
 /* 103 */     StringBuffer buff = new StringBuffer("{success:true,'totalCounts':")
 /* 104 */       .append(filter.getPagingBean().getTotalItems()).append(

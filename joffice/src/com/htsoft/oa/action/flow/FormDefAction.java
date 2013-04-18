@@ -1,34 +1,36 @@
  package com.htsoft.oa.action.flow;
  
- import com.google.gson.Gson;
- import com.google.gson.GsonBuilder;
- import com.google.gson.reflect.TypeToken;
- import com.htsoft.core.command.QueryFilter;
- import com.htsoft.core.util.AppUtil;
- import com.htsoft.core.util.FileUtil;
- import com.htsoft.core.web.action.BaseAction;
- import com.htsoft.core.web.paging.PagingBean;
- import com.htsoft.oa.model.flow.FieldRights;
- import com.htsoft.oa.model.flow.FormDef;
- import com.htsoft.oa.model.flow.FormDefMapping;
- import com.htsoft.oa.model.flow.FormTable;
- import com.htsoft.oa.model.flow.FormTableItem;
- import com.htsoft.oa.model.flow.ProDefinition;
- import com.htsoft.oa.service.flow.FieldRightsService;
- import com.htsoft.oa.service.flow.FormDefMappingService;
- import com.htsoft.oa.service.flow.FormDefService;
- import com.htsoft.oa.service.flow.FormTableGenService;
- import com.htsoft.oa.service.flow.FormTableService;
- import com.htsoft.oa.service.flow.ProDefinitionService;
  import java.lang.reflect.Type;
- import java.util.HashMap;
- import java.util.Iterator;
- import java.util.List;
- import java.util.Map;
- import java.util.Set;
- import javax.annotation.Resource;
- import javax.servlet.http.HttpServletRequest;
- import org.apache.commons.lang.StringUtils;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.annotation.Resource;
+
+import org.apache.commons.lang.StringUtils;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import com.htsoft.core.command.QueryFilter;
+import com.htsoft.core.model.OnlineUser;
+import com.htsoft.core.util.AppUtil;
+import com.htsoft.core.util.FileUtil;
+import com.htsoft.core.web.action.BaseAction;
+import com.htsoft.oa.model.flow.FieldRights;
+import com.htsoft.oa.model.flow.FormDef;
+import com.htsoft.oa.model.flow.FormDefMapping;
+import com.htsoft.oa.model.flow.FormTable;
+import com.htsoft.oa.model.flow.FormTableItem;
+import com.htsoft.oa.model.flow.ProDefinition;
+import com.htsoft.oa.service.flow.FieldRightsService;
+import com.htsoft.oa.service.flow.FormDefMappingService;
+import com.htsoft.oa.service.flow.FormDefService;
+import com.htsoft.oa.service.flow.FormTableGenService;
+import com.htsoft.oa.service.flow.FormTableService;
+import com.htsoft.oa.service.flow.ProDefinitionService;
  
  public class FormDefAction extends BaseAction
  {
@@ -102,7 +104,7 @@
      QueryFilter filter = new QueryFilter(getRequest());
      List<FormDef> list = this.formDefService.getAll(filter);
  
-     Type type = new TypeToken() {
+     Type type = new TypeToken<List<OnlineUser>>() {
      }.getType();
      StringBuffer buff = new StringBuffer("{success:true,'totalCounts':")
        .append(filter.getPagingBean().getTotalItems()).append(

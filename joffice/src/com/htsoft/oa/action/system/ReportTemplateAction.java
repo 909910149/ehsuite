@@ -1,32 +1,58 @@
 /*     */ package com.htsoft.oa.action.system;
 /*     */ 
-/*     */ import com.google.gson.Gson;
-/*     */ import com.google.gson.reflect.TypeToken;
-/*     */ import com.htsoft.core.command.QueryFilter;
-/*     */ import com.htsoft.core.util.AppUtil;
-/*     */ import com.htsoft.core.util.BeanUtil;
-/*     */ import com.htsoft.core.web.action.BaseAction;
-/*     */ import com.htsoft.core.web.paging.PagingBean;
-/*     */ import com.htsoft.oa.model.system.ReportParam;
-/*     */ import com.htsoft.oa.model.system.ReportTemplate;
-/*     */ import com.htsoft.oa.service.system.ReportParamService;
-/*     */ import com.htsoft.oa.service.system.ReportTemplateService;
-/*     */ import flexjson.JSONSerializer;
 /*     */ import java.io.File;
-/*     */ import java.io.PrintStream;
-/*     */ import java.lang.reflect.InvocationTargetException;
-/*     */ import java.lang.reflect.Type;
-/*     */ import java.text.ParseException;
-/*     */ import java.text.SimpleDateFormat;
-/*     */ import java.util.Date;
-/*     */ import java.util.Iterator;
-/*     */ import java.util.List;
-/*     */ import java.util.Map;
-/*     */ import java.util.Map.Entry;
-/*     */ import java.util.Set;
-/*     */ import javax.annotation.Resource;
-/*     */ import javax.servlet.http.HttpServletRequest;
-/*     */ import org.apache.commons.lang.StringUtils;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Type;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.apache.commons.lang.StringUtils;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.htsoft.core.command.QueryFilter;
+import com.htsoft.core.model.OnlineUser;
+import com.htsoft.core.util.AppUtil;
+import com.htsoft.core.util.BeanUtil;
+import com.htsoft.core.web.action.BaseAction;
+import com.htsoft.oa.model.system.ReportParam;
+import com.htsoft.oa.model.system.ReportTemplate;
+import com.htsoft.oa.service.system.ReportParamService;
+import com.htsoft.oa.service.system.ReportTemplateService;
+
+import flexjson.JSONSerializer;
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
+/*     */ 
 /*     */ 
 /*     */ public class ReportTemplateAction extends BaseAction
 /*     */ {
@@ -60,7 +86,7 @@
 /*  89 */     QueryFilter filter = new QueryFilter(getRequest());
 /*  90 */     List list = this.reportTemplateService.getAll(filter);
 /*     */ 
-/*  92 */     Type type = new TypeToken() {
+/*  92 */     Type type = new TypeToken<List<OnlineUser>>() {
 /*  93 */     }.getType();
 /*  94 */     StringBuffer buff = new StringBuffer("{success:true,'totalCounts':")
 /*  95 */       .append(filter.getPagingBean().getTotalItems()).append(

@@ -4,6 +4,7 @@
 /*     */ import com.google.gson.GsonBuilder;
 /*     */ import com.google.gson.reflect.TypeToken;
 /*     */ import com.htsoft.core.command.QueryFilter;
+import com.htsoft.core.model.OnlineUser;
 /*     */ import com.htsoft.core.util.BeanUtil;
 /*     */ import com.htsoft.core.util.ContextUtil;
 /*     */ import com.htsoft.core.util.DateUtil;
@@ -72,7 +73,7 @@
 /*     */ 
 /*  82 */     List list = this.calendarPlanService.getAll(filter);
 /*     */ 
-/*  84 */     Type type = new TypeToken() {  }
+/*  84 */     Type type = new TypeToken<List<OnlineUser>>() {  }
 /*  84 */     .getType();
 /*  85 */     StringBuffer buff = new StringBuffer("{success:true,'totalCounts':")
 /*  86 */       .append(filter.getPagingBean().getTotalItems()).append(",result:");
